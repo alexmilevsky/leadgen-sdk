@@ -1,0 +1,30 @@
+{
+  "name": "alexmilevsky/leadgen-sdk",
+  "description": "PHP SDK for the Leadgen API",
+  "keywords": [
+    "leadgen",
+    "sdk"
+  ],
+  "type": "library",
+  "homepage": "http://leadgen.lexdegor.com",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Alexander Milevsky",
+      "homepage": "https://alexmilevsky.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^6.4"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Leadgen\\": "src/"
+    }
+  }
+}
