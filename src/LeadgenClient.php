@@ -70,8 +70,6 @@ class LeadgenClient {
         $content = $response->getBody()->getContents();
         $content = json_decode($content, true);
 
-        Log::debug($response->getBody());
-
         if (isset($content['access_token'])) {
             $token = $content;
             $token['created'] = time();
