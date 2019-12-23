@@ -16,4 +16,10 @@ class OrderService
     {
         return $this->client->request('orders', 'POST', $data);
     }
+
+    public function update($id, array $data)
+    {
+        $url = 'orders/' . $id;
+        return $this->client->request($url, 'PUT', $data);
+    }
 }
