@@ -86,7 +86,8 @@ class LeadgenClient {
         $client = new Client();
         $headers = array('Authorization' => 'Bearer' . $this->getAccessToken());
 
-        if (mb_strtoupper($method) === 'GET') {
+        $method = mb_strtoupper($method);
+        if (in_array($method, ['GET', 'PUT', 'PATCH'])) {
             $options = array('headers' => $headers, 'query' => $data);
         }
         else {

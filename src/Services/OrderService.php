@@ -20,6 +20,6 @@ class OrderService
     public function update($id, array $data)
     {
         $url = 'orders/' . $id;
-        return $this->client->request($url, 'PUT', $data);
+        return $this->client->request($url, 'PATCH', $data);
     }
 }
