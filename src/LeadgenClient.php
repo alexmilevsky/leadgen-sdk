@@ -61,6 +61,24 @@ class LeadgenClient {
         return ($created + ($this->token['expires_in'] - 30)) < time();
     }
 
+    public function auth(string $email, string $password)
+    {
+        $client = new Client();
+        $headers = array('Accept' => 'application/json');
+        $data = array('email' => $email, 'password' => $password);
+        $options = array('headers' => $headers, 'query' => $data);
+        $url = self::API_URL . 'auth/login';
+        $response = $client->request('POST', $url, $options);
+        $content = $response->getBody()->getContents();
+        $content = json_decode($content, true);
+
+        if (isset($content['access_token'])) {
+            $token = $content;
+            $token['created'] = time();
+            $this->setToken($token);
+        }
+    }
+
     public function refreshToken($refreshToken) {
         $client = new Client();
         $headers = array('Authorization' => 'Bearer' . $refreshToken, 'Accept' => 'application/json');
