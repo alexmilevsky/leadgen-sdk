@@ -14,6 +14,9 @@ class StatisticService
 
     public function getList(array $data = [])
     {
+        if (isset($data['order_ids'])) {
+            return $this->client->request('statistics', 'POST', $data);
+        }
         return $this->client->request('statistics', 'GET', $data);
     }
 }
