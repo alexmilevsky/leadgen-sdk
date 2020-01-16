@@ -19,4 +19,12 @@ class StatisticService
         }
         return $this->client->request('statistics', 'GET', $data);
     }
+
+    public function getCostList(array $data) = [])
+    {
+        if (isset($data['order_ids'])) {
+            return $this->client->request('cost-statistics', 'POST', $data);
+        }
+        return $this->client->request('cost-statistics', 'GET', $data);
+    }
 }
