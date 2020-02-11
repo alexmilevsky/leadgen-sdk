@@ -60,6 +60,6 @@ class CampaignService
      */
     public function delete($id)
     {
-        return $this->client->request('campaigns/' . $id, 'DELETE');
+        return $this->client->request('campaigns/' . $id, 'DELETE', []);
     }
 }
