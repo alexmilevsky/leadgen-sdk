@@ -43,4 +43,23 @@ class CampaignService
     {
         return $this->client->request('campaigns', 'GET', $data);
     }
+
+    /**
+     * @param $id
+     * @param $data
+     *
+     * @return array
+     */
+    public function update($id, $data): array
+    {
+        return $this->client->request('campaigns', 'PUT', $data);
+    }
+
+    /**
+     * @param $id
+     */
+    public function delete($id)
+    {
+        return $this->client->request('campaigns/' . $id, 'DELETE');
+    }
 }
