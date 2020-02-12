@@ -52,7 +52,7 @@ class CampaignService
      */
     public function update($id, $data): array
     {
-        return $this->client->request('campaigns', 'PUT', $data);
+        return $this->client->request('campaigns/' . $id, 'PUT', $data);
     }
 
     /**
