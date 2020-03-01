@@ -20,11 +20,11 @@ class StatisticService
         return $this->client->request('statistics', 'GET', $data);
     }
 
-    public function getCostList(array $data = [])
+    public function getInputList(array $data = [])
     {
         if (isset($data['order_ids'])) {
-            return $this->client->request('cost-statistics', 'POST', $data);
+            return $this->client->request('input-statistics', 'POST', $data);
         }
-        return $this->client->request('cost-statistics', 'GET', $data);
+        return $this->client->request('input-statistics', 'GET', $data);
     }
 }
