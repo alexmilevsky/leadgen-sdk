@@ -15,6 +15,6 @@ class CampaignCostService
     public function create(array $data)
     {
         $campaignId = intval($data['campaign_id']);
-        return $this->client->request("campaigns/{$campaignId}/cost", 'POST', $data);
+        return $this->client->request("campaigns/{$campaignId}/costs", 'POST', $data);
     }
 }
